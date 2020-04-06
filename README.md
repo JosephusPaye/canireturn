@@ -1,24 +1,23 @@
-# canireturn
+# Can I Return?
 
-## Project setup
-```
-yarn install
-```
+♻ Quickly check if a container is accepted in the [NSW Return and Earn](https://returnandearn.org.au/) recycling program by entering the barcode or scanning it.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+[![Promotional image showing the app](./promo.png)](https://canireturn.netlify.com/)
 
-### Compiles and minifies for production
-```
-yarn build
-```
+This project is part of [#CreateWeekly](https://dev.to/josephuspaye/createweekly-create-something-new-publicly-every-week-in-2020-1nh9), my attempt to create something new publicly every week in 2020.
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Usage
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<https://canireturn.netlify.com/>
+
+## How it works
+
+<!-- Uses the Return and Earn Container Search database... -->
+
+## Contributing
+
+See [contribution guide](CONTRIBUTING.md).
+
+## Licence
+
+[MIT](LICENCE)
