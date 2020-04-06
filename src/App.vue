@@ -1,32 +1,44 @@
 <template>
   <div id="app" class="bg-primary h-screen w-screen flex relative">
+    <BarcodeInput class="w-full h-full" ref="input" v-show="view === 'input'" />
     <transition name="fade">
       <StartScreen
         class="w-full h-full absolute left-0 right-0 bg-primary"
+        @start-input="startInput"
         v-show="view === 'start'"
       />
     </transition>
     <IconButton
       class="absolute bottom-0 right-0 mr-4 mb-4"
       icon="help"
-      :seamless="view === 'start'"
+      :seamless="view === 'start' || view === 'input'"
     />
   </div>
 </template>
 
 <script>
+import BarcodeInput from './components/BarcodeInput.vue';
 import IconButton from './components/IconButton.vue';
 import StartScreen from './components/StartScreen.vue';
 
 export default {
   name: 'App',
 
-  components: { IconButton, StartScreen },
+  components: { BarcodeInput, IconButton, StartScreen },
 
   data() {
     return {
       view: 'start',
     };
+  },
+
+  methods: {
+    startInput() {
+      this.view = 'input';
+      this.$nextTick(() => {
+        this.$refs.input.focus();
+      });
+    },
   },
 };
 </script>
