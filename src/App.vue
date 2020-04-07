@@ -16,6 +16,7 @@
       :show="isVisible('start.input')"
       :offset="1"
       @close="pop"
+      @container="push('container-status', $event)"
       @not-found="push('not-found', $event)"
     />
     <PageContainerNotFound
@@ -25,6 +26,20 @@
       :data="viewData['start.input.not-found']"
       @close="pop"
     />
+    <PageContainerStatus
+      class="absolute left-0 right-0 w-full h-full"
+      :show="isVisible('start.input.container-status')"
+      :offset="2"
+      :data="viewData['start.input.container-status']"
+      @close="pop"
+      @show-help="push('help', $event)"
+    />
+    <PageProductDetailHelp
+      class="absolute left-0 right-0 w-full h-full"
+      :show="isVisible('start.input.container-status.help')"
+      :offset="3"
+      :data="viewData['start.input.container-status.help']"
+      @close="pop"
     />
   </div>
 </template>
@@ -33,6 +48,8 @@
 import PageStart from './components/PageStart.vue';
 import PageFaq from './components/PageFaq.vue';
 import PageBarcodeInput from './components/PageBarcodeInput.vue';
+import PageContainerStatus from './components/PageContainerStatus.vue';
+import PageProductDetailHelp from './components/PageProductDetailHelp.vue';
 import PageContainerNotFound from './components/PageContainerNotFound.vue';
 
 export default {
@@ -42,6 +59,8 @@ export default {
     PageStart,
     PageFaq,
     PageBarcodeInput,
+    PageContainerStatus,
+    PageProductDetailHelp,
     PageContainerNotFound,
   },
 
