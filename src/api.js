@@ -106,9 +106,34 @@ function extractResults(searchResultsHtml) {
       const text = td.querySelector('.slds-truncate'); // Holds the main <td> text
       return text ? text.textContent.trim() : null;
     });
+
+    const registrationStatusHelp = {
+      'Pending Payment':
+        'Container approval application awaiting fee payment before EPA review.',
+      'Pending Approval':
+        'Container approval application awaiting EPA decision.',
+      Active: 'Container approved by the EPA.',
+      Rejected: 'Container approval application rejected by the EPA.',
+      Expired: 'Container approval expired.',
+      Revoked: 'Container approval has been revoked by the EPA.',
+      undefined: '',
+    };
+
     columns.forEach((column, i) => {
-      product[column] = data[i];
+      const value = data[i];
+
+      product[column] = {
+        label: column,
+        value: value,
+        help:
+          column == 'Registration Status' ? registrationStatusHelp[value] : '',
+      };
+
+      if (typeof value === 'string' && value.trim().length === 0) {
+        product[column].value = 'N/A';
+      }
     });
+
     products.push(product);
   });
 

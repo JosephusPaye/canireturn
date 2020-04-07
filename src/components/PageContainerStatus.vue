@@ -7,7 +7,7 @@
   >
     <div class="flex flex-col h-full relative">
       <AnimatedCheckmark
-        v-if="data && data['Registration Status'] === 'Active'"
+        v-if="returnable"
         :show="showStatusIcon"
         :size="72"
         class="mx-auto -mt-8 mb-4 flex-shrink-0"
@@ -25,7 +25,7 @@
         >
           <div class="text-2xl text-center text-primary mb-5">
             {{
-              data['Registration Status'] === 'Active'
+              returnable
                 ? 'This container can be returned!'
                 : "This container can't be returned."
             }}
@@ -85,6 +85,12 @@ export default {
     return {
       showStatusIcon: false,
     };
+  },
+
+  computed: {
+    returnable() {
+      return this.data && this.data['Registration Status'].value === 'Active';
+    },
   },
 
   watch: {
