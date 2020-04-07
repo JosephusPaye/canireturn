@@ -76,10 +76,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-input {
-  background-color: rgba(255, 255, 255, 0.25);
-  transition: all 0.3s ease;
-}
-</style>

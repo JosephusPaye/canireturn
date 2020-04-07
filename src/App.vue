@@ -16,6 +16,14 @@
       :show="isVisible('start.input')"
       :offset="1"
       @close="pop"
+      @not-found="push('not-found', $event)"
+    />
+    <PageContainerNotFound
+      class="absolute left-0 right-0 w-full h-full"
+      :show="isVisible('start.input.not-found')"
+      :offset="2"
+      :data="viewData['start.input.not-found']"
+      @close="pop"
     />
     />
   </div>
@@ -25,6 +33,7 @@
 import PageStart from './components/PageStart.vue';
 import PageFaq from './components/PageFaq.vue';
 import PageBarcodeInput from './components/PageBarcodeInput.vue';
+import PageContainerNotFound from './components/PageContainerNotFound.vue';
 
 export default {
   name: 'App',
@@ -33,6 +42,7 @@ export default {
     PageStart,
     PageFaq,
     PageBarcodeInput,
+    PageContainerNotFound,
   },
 
   data() {

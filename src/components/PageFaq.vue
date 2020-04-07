@@ -4,7 +4,7 @@
       <div class="text-primary text-3xl font-light">
         Frequently asked questions
       </div>
-      <div class="faq-item rounded py-5 px-5">
+      <div class="bg-well rounded py-5 px-5">
         <div class="uppercase tracking-widest text-secondary mb-3">
           What is this?
         </div>
@@ -33,7 +33,7 @@
           </p>
         </div>
       </div>
-      <div class="faq-item rounded py-5 px-5">
+      <div class="bg-well rounded py-5 px-5">
         <div class="uppercase tracking-widest text-secondary mb-3">
           How accurate is it?
         </div>
@@ -50,7 +50,7 @@
           </p>
         </div>
       </div>
-      <div class="faq-item rounded py-5 px-5 mb-8">
+      <div class="bg-well rounded py-5 px-5 mb-8">
         <div class="uppercase tracking-widest text-secondary mb-3">
           Who made this and why?
         </div>
@@ -101,9 +101,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.faq-item {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-</style>
