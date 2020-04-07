@@ -11,6 +11,12 @@
       :offset="1"
       @close="pop"
     />
+    <PageBarcodeInput
+      class="absolute left-0 right-0 w-full h-full"
+      :show="isVisible('start.input')"
+      :offset="1"
+      @close="pop"
+    />
     />
   </div>
 </template>
@@ -18,6 +24,7 @@
 <script>
 import PageStart from './components/PageStart.vue';
 import PageFaq from './components/PageFaq.vue';
+import PageBarcodeInput from './components/PageBarcodeInput.vue';
 
 export default {
   name: 'App',
@@ -25,6 +32,7 @@ export default {
   components: {
     PageStart,
     PageFaq,
+    PageBarcodeInput,
   },
 
   data() {
