@@ -1,7 +1,8 @@
 <template>
   <button
-    class="icon-button w-16 h-16 flex items-center justify-center rounded-md transition duration-200 ease-in-out"
+    class="icon-button flex items-center justify-center rounded-md transition duration-200 ease-in-out"
     :class="[
+      `text-${size}`,
       seamless
         ? 'text-secondary hover:text-white focus:text-white'
         : 'bg-overlay text-secondary hover:text-white focus:text-white',
@@ -11,8 +12,6 @@
     <svg
       role="img"
       xmlns="http://www.w3.org/2000/svg"
-      width="40px"
-      height="40px"
       viewBox="0 0 24 24"
       aria-labelledby="cameraRearIconTitle"
       stroke="currentColor"
@@ -35,8 +34,6 @@
     <svg
       role="img"
       xmlns="http://www.w3.org/2000/svg"
-      width="40px"
-      height="40px"
       viewBox="0 0 24 24"
       aria-labelledby="plusIconTitle"
       stroke="currentColor"
@@ -53,8 +50,6 @@
     <svg
       role="img"
       xmlns="http://www.w3.org/2000/svg"
-      width="40px"
-      height="40px"
       viewBox="0 0 24 24"
       aria-labelledby="minusIconTitle"
       stroke="currentColor"
@@ -71,8 +66,6 @@
     <svg
       role="img"
       xmlns="http://www.w3.org/2000/svg"
-      width="40px"
-      height="40px"
       viewBox="0 0 24 24"
       aria-labelledby="helpIconTitle"
       stroke="currentColor"
@@ -99,6 +92,23 @@ export default {
   props: {
     icon: String,
     seamless: Boolean,
+    size: {
+      type: String,
+      default: '6xl',
+    },
   },
 };
 </script>
+
+<style>
+.icon-button {
+  width: 1em;
+  height: 1em;
+}
+
+.icon-button svg {
+  width: 0.625em;
+  height: 0.625em;
+  font-size: inherit;
+}
+</style>

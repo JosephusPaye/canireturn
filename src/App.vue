@@ -5,18 +5,26 @@
       @start-input="push('input', $event)"
       @start-help="push('faq', $event)"
     />
+    <PageFaq
+      class="absolute left-0 right-0 w-full h-full"
+      :show="isVisible('start.faq')"
+      :offset="1"
+      @close="pop"
+    />
     />
   </div>
 </template>
 
 <script>
 import PageStart from './components/PageStart.vue';
+import PageFaq from './components/PageFaq.vue';
 
 export default {
   name: 'App',
 
   components: {
     PageStart,
+    PageFaq,
   },
 
   data() {
