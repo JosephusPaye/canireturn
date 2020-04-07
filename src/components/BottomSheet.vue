@@ -1,12 +1,13 @@
 <template>
   <div
-    class="bottom-sheet-backdrop w-full h-full"
+    class="bottom-sheet-backdrop"
     :class="[show ? 'is-shown' : 'pointer-events-none']"
-    @click="$emit('update:show', !show)"
+    @click="$emit('close')"
   >
-    <transition name="bottom-sheet">
+    <transition name="bottom-sheet" @after-enter="$emit('shown')">
       <div
-        class="bg-white bottom-sheet absolute bottom-0 right-0 left-0"
+        class="bg-primary bottom-sheet absolute bottom-0 right-0 left-0"
+        :style="{ height: `calc(100% - ${100 * offset}px)` }"
         @click.stop
         v-if="show"
       >
@@ -21,6 +22,10 @@ export default {
   name: 'BottomSheet',
   props: {
     show: Boolean,
+    offset: {
+      type: Number,
+      default: 0,
+    },
   },
 };
 </script>
@@ -37,7 +42,6 @@ export default {
 
 .bottom-sheet {
   box-shadow: 0 -14px 28px rgba(0, 0, 0, 0.25), 0 -10px 10px rgba(0, 0, 0, 0.22);
-  min-height: 400px;
 }
 
 .bottom-sheet-enter-active,

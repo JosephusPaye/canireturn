@@ -6,7 +6,10 @@
       Use this app to check the barcode on a container to see if it is accepted
       in the
       <br />
-      <a href="https://returnandearn.org.au">NSW Return and Earn</a> program.
+      <a href="https://returnandearn.org.au" target="_blank" rel="noopener"
+        >NSW Return and Earn</a
+      >
+      program.
     </p>
     <button
       class="bg-accent text-white text-xl font-semibold px-10 py-4 rounded-full uppercase tracking-wide"
@@ -14,17 +17,22 @@
     >
       Enter barcode
     </button>
+    <IconButton
+      class="absolute bottom-0 right-0 mr-4 mb-4"
+      icon="help"
+      seamless
+      @click="$emit('start-help')"
+    />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'StartScreen',
+import IconButton from './IconButton.vue';
 
-  data() {
-    return {
-      product: {},
-    };
+export default {
+  name: 'PageStart',
+  components: {
+    IconButton,
   },
 };
 </script>

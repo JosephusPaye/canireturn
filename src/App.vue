@@ -1,43 +1,47 @@
 <template>
   <div id="app" class="bg-primary h-screen w-screen flex relative">
-    <BarcodeInput class="w-full h-full" ref="input" v-show="view === 'input'" />
-    <transition name="fade">
-      <StartScreen
-        class="w-full h-full absolute left-0 right-0 bg-primary"
-        @start-input="startInput"
-        v-show="view === 'start'"
-      />
-    </transition>
-    <IconButton
-      class="absolute bottom-0 right-0 mr-4 mb-4"
-      icon="help"
-      :seamless="view === 'start' || view === 'input'"
+    <PageStart
+      class="absolute left-0 right-0 w-full h-full"
+      @start-input="push('input', $event)"
+      @start-help="push('faq', $event)"
+    />
     />
   </div>
 </template>
 
 <script>
-import BarcodeInput from './components/BarcodeInput.vue';
-import IconButton from './components/IconButton.vue';
-import StartScreen from './components/StartScreen.vue';
+import PageStart from './components/PageStart.vue';
 
 export default {
   name: 'App',
 
-  components: { BarcodeInput, IconButton, StartScreen },
+  components: {
+    PageStart,
+  },
 
   data() {
     return {
       view: 'start',
+      viewData: {},
     };
   },
 
   methods: {
-    startInput() {
-      this.view = 'input';
-      this.$nextTick(() => {
-        this.$refs.input.focus();
-      });
+    isVisible(view) {
+      return this.view.startsWith(view);
+    },
+
+    push(view, data) {
+      const viewPath = this.view + '.' + view;
+      this.viewData[viewPath] = data;
+      this.view = viewPath;
+    },
+
+    pop() {
+      this.view = this.view
+        .split('.')
+        .slice(0, -1)
+        .join('.');
     },
   },
 };
@@ -65,15 +69,5 @@ a {
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 1s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
