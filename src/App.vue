@@ -18,12 +18,20 @@
       @close="pop"
       @container="push('container-status', $event)"
       @not-found="push('not-found', $event)"
+      @error="push('error', $event)"
     />
     <PageContainerNotFound
       class="absolute left-0 right-0 w-full h-full"
       :show="isVisible('start.input.not-found')"
       :offset="2"
       :data="viewData['start.input.not-found']"
+      @close="pop"
+    />
+    <PageContainerCheckError
+      class="absolute left-0 right-0 w-full h-full"
+      :show="isVisible('start.input.error')"
+      :offset="2"
+      :data="viewData['start.input.error']"
       @close="pop"
     />
     <PageContainerStatus
@@ -51,6 +59,7 @@ import PageBarcodeInput from './components/PageBarcodeInput.vue';
 import PageContainerStatus from './components/PageContainerStatus.vue';
 import PageProductDetailHelp from './components/PageProductDetailHelp.vue';
 import PageContainerNotFound from './components/PageContainerNotFound.vue';
+import PageContainerCheckError from './components/PageContainerCheckError.vue';
 
 export default {
   name: 'App',
@@ -62,6 +71,7 @@ export default {
     PageContainerStatus,
     PageProductDetailHelp,
     PageContainerNotFound,
+    PageContainerCheckError,
   },
 
   data() {
