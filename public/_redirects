@@ -1,0 +1,9 @@
+# Netlify redirects configuration
+
+# The following rule proxies requests to /proxy/* to the proxy endpoint specified in .env,
+# removing the /proxy prefix. So, if the proxy is https://cds.epa.nsw.gov.au, a request
+# to /proxy/CDSContainerSearchPage will be proxied to
+# https://cds.epa.nsw.gov.au/CDSContainerSearchPage
+# This is necessary to get around CORS issues when making a direct request in the browser.
+
+/proxy/*  https://cds.epa.nsw.gov.au/:splat  200
