@@ -2,7 +2,7 @@
   <button
     class="icon-button flex items-center justify-center rounded-md transition duration-200 ease-in-out"
     :class="[
-      `text-${size}`,
+      size,
       seamless
         ? 'text-secondary hover:text-white focus:text-white'
         : 'bg-overlay text-secondary hover:text-white focus:text-white',
@@ -94,7 +94,7 @@ export default {
     seamless: Boolean,
     size: {
       type: String,
-      default: '6xl',
+      default: 'text-6xl',
     },
   },
 };

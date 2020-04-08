@@ -46,7 +46,7 @@
                 <IconButton
                   icon="help"
                   seamless
-                  size="5xl"
+                  size="text-5xl"
                   @click="
                     $emit('show-help', {
                       title: label,
