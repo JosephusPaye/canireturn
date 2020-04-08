@@ -108,6 +108,16 @@ export default {
 body {
   color: rgba(0, 0, 0, 0.87);
   @apply text-base;
+
+  @screen md {
+    @apply h-screen flex items-center justify-center bg-gray-900;
+
+    #app {
+      width: 480px;
+      height: 820px;
+      overflow: hidden;
+    }
+  }
 }
 
 a {
