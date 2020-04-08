@@ -68,7 +68,7 @@ export default {
           }
         })
         .catch(err => {
-          console.log('unable to check container', err);
+          console.error('unable to check container', err);
           this.loading = false;
           this.$emit('error', err);
         });
