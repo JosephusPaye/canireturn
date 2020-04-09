@@ -16,6 +16,11 @@ When you enter a container's barcode, the app checks if it's elibible for return
 
 The app also displays additional information about the container, such as the product's name, material type, and storage capacity.
 
+## What's Next
+
+- [ ] Add a barcode scanner
+- [ ] Make app an installable PWA
+
 ## Contributing
 
 See [contribution guide](CONTRIBUTING.md).
