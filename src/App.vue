@@ -115,6 +115,7 @@ body {
     #app {
       width: 480px;
       height: 820px;
+      max-height: 100vh;
       overflow: hidden;
     }
   }
