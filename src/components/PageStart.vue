@@ -5,7 +5,6 @@
     <p class="text-secondary text-lg mb-12">
       Use this app to check the barcode on a container to see if it is accepted
       in the
-      <br />
       <a href="https://returnandearn.org.au" target="_blank" rel="noopener"
         >NSW Return and Earn</a
       >

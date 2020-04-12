@@ -74,12 +74,11 @@
           <p>
             The app is open-sourced on
             <a
-              href="https://github.com/JosephusPaye/cadence"
+              href="https://github.com/JosephusPaye/canireturn"
               target="_blank"
               rel="noopener"
               >GitHub</a
-            >, where you can report issues or contribute code to help make it
-            better.
+            >, where you can report issues or contribute code to make it better.
           </p>
         </div>
       </div>
